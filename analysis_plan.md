@@ -25,16 +25,13 @@ The analysis focuses on the following key historical events to correlate with de
 | Event | Date | Type | Description |
 | :--- | :--- | :--- | :--- |
 | **Gulf War** | 1990-08-02 | Conflict | Iraq invades Kuwait, leading to a spike in oil prices due to supply fears. |
-### Limitations & Stakeholder Impact
-*   **Causality vs. Correlation**: Detecting a change point near a known event shows correlation, not necessarily direct causation. Other confounding variables could be at play.
-    *   *Impact*: Policymakers must be cautious not to attribute price stability solely to a specific policy intervention without considering external market factors.
-*   **Lag Effects**: Market reactions to news can be delayed or anticipatory. A change point might not align perfectly with an event date.
-    *   *Impact*: Investors trading on immediate news might miss the structural break that occurs days or weeks later as the market digests the full implications.
-*   **Model Complexity**: Capturing all market nuances (seasonality, micro-structure) in a single change point model is difficult. We focus on major structural shifts.
-    *   *Impact*: Energy companies should use this model for strategic, long-term planning (quarterly/yearly) rather than daily operational hedging, as high-frequency noise is not the model's focus.
-
-## 6. EDA Findings (Preliminary)
-*   **Trend**: The data shows an overall upward trend but with significant fluctuations (non-linear).h OPEC refusal to cut output. |
+| **Asian Financial Crisis** | 1997-07-01 | Economic | Financial crisis starting in Thailand affecting East Asia, reducing demand for oil. |
+| **9/11 Attacks** | 2001-09-11 | Geopolitical | Terrorist attacks in the US causing market uncertainty and economic slowdown. |
+| **US Invasion of Iraq** | 2003-03-20 | Conflict | Concerns over Middle East stability and oil supply disruptions. |
+| **Global Financial Crisis** | 2008-09-15 | Economic | Collapse of Lehman Brothers precipitating a global recession and crash in oil demand. |
+| **Arab Spring** | 2010-12-17 | Political | Wave of protests and revolutions in the Arab world disrupting supply chains. |
+| **Libyan Civil War** | 2011-02-15 | Conflict | Uprising against Muammar Gaddafi leading to significant loss of Libyan oil output. |
+| **2014 Oil Price Crash** | 2014-06-20 | Economic/Policy | Surge in US shale production combined with OPEC refusal to cut output. |
 | **Iran Nuclear Deal (JCPOA)** | 2015-07-14 | Political | Agreement lifting sanctions on Iran, allowing more oil onto the global market. |
 | **OPEC+ Formation** | 2016-12-10 | Policy | OPEC and non-OPEC members (led by Russia) agree to cut production to stabilize prices. |
 | **US-China Trade War** | 2018-07-06 | Economic | Tariffs and trade tensions dampening global economic growth outlook and oil demand. |
@@ -43,7 +40,21 @@ The analysis focuses on the following key historical events to correlate with de
 | **Post-COVID Recovery** | 2021-01-01 | Economic | Global economies reopening leading to demand outstripping supply. |
 | **Russia-Ukraine War** | 2022-02-24 | Conflict | Invasion of Ukraine leading to sanctions on Russia and fears of energy supply crises. |
 
-## 4. Communication Strategy
+## 4. Assumptions and Limitations
+### Assumptions
+*   **Data Accuracy**: We assume the provided Brent oil price dataset is accurate and representative of the global market.
+*   **Structural Breaks**: We assume that significant market shifts manifest as sharp changes (change points) in the statistical parameters (mean or variance) of the time series.
+*   **Independence**: Simple models may assume daily returns are independent, though time series often exhibit autocorrelation (which we may need to model).
+
+### Limitations & Stakeholder Impact
+*   **Causality vs. Correlation**: Detecting a change point near a known event shows correlation, not necessarily direct causation. Other confounding variables could be at play.
+    *   *Impact*: Policymakers must be cautious not to attribute price stability solely to a specific policy intervention without considering external market factors.
+*   **Lag Effects**: Market reactions to news can be delayed or anticipatory. A change point might not align perfectly with an event date.
+    *   *Impact*: Investors trading on immediate news might miss the structural break that occurs days or weeks later as the market digests the full implications.
+*   **Model Complexity**: Capturing all market nuances (seasonality, micro-structure) in a single change point model is difficult. We focus on major structural shifts.
+    *   *Impact*: Energy companies should use this model for strategic, long-term planning (quarterly/yearly) rather than daily operational hedging, as high-frequency noise is not the model's focus.
+
+## 5. Stakeholder Communication Strategy
 To ensure insights are actionable, we define specific communication channels for our primary stakeholders:
 
 ### **1. Investors & Analysts**
@@ -64,23 +75,12 @@ To ensure insights are actionable, we define specific communication channels for
 *   **Format**: Slide deck highlighting long-term structural trends and potential "shock" scenarios derived from the model.
 *   **Key Insight**: Identification of sustained price floors or ceilings established by new market regimes (e.g., Post-Shale revolution).
 
-## 5. Assumptions and Limitations
-### Assumptions
-*   **Data Accuracy**: We assume the provided Brent oil price dataset is accurate and representative of the global market.
-*   **Structural Breaks**: We assume that significant market shifts manifest as sharp changes (change points) in the statistical parameters (mean or variance) of the time series.
-*   **Independence**: Simple models may assume daily returns are independent, though time series often exhibit autocorrelation (which we may need to model).
-
-### Limitations
-*   **Causality vs. Correlation**: Detecting a change point near a known event shows correlation, not necessarily direct causation. Other confounding variables could be at play.
-*   **Lag Effects**: Market reactions to news can be delayed or anticipatory. A change point might not align perfectly with an event date.
-*   **Model Complexity**: Capturing all market nuances (seasonality, micro-structure) in a single change point model is difficult. We focus on major structural shifts.
-
-## 4. EDA Findings (Preliminary)
+## 6. EDA Findings (Preliminary)
 *   **Trend**: The data shows an overall upward trend but with significant fluctuations (non-linear).
-## 7. Expected Outputs
-*   **Dates of Change**: Probability distributions for when structural changes occurred.lity periods follow high-volatility periods (heteroskedasticity).
+*   **Stationarity**: Raw prices are likely non-stationary (mean changes over time). However, daily returns (first differences) are expected to be stationary.
+*   **Volatility**: Volatility is not constant; it exhibits clustering where high-volatility periods follow high-volatility periods (heteroskedasticity).
 
-## 5. Expected Outputs
+## 7. Expected Outputs
 *   **Dates of Change**: Probability distributions for when structural changes occurred.
 *   **Regime Parameters**: Average price and volatility levels before and after each change.
 *   **Impact Assessment**: A quantified measure of how much price behavior shifted during key historical periods.

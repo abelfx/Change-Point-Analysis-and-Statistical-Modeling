@@ -28,6 +28,20 @@ The analysis follows a structured five-step workflow:
 4.  **Event Association**: Correlating statistically significant change points with known historical events.
 5.  **Impact Quantification**: Measuring the magnitude of price shifts pre- and post-event.
 
+## Modeling Assumptions & Limitations
+To ensure transparent and robust analysis, we explicitly state our modeling constraints:
+*   **Assumptions**: Structural breaks manifest as abrupt changes in statistical parameters (mean/variance). Daily returns are assumed independent in simple models.
+*   **Limitations**:
+    *   **Correlation $\neq$ Causality**: A change point near a geopolitical event implies association, not direct causation.
+    *   **Lag Effects**: Market reactions may naturally lag behind event dates.
+    *   **Scope**: We focus on major structural shifts, not high-frequency trading noise.
+
+## Stakeholder Communication
+Insights are tailored to specific audience needs:
+*   **Investors**: Interactive Dashboards tracking volatility regimes and risk probabilities.
+*   **Policymakers**: Executive Policy Briefs analyzing the effectiveness of historical interventions.
+*   **Energy Companies**: Strategic Planning Decks focusing on long-term price floors and structural trends.
+
 ## Setup and Installation
 
 ### Prerequisites
