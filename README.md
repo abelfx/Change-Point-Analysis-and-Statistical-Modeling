@@ -32,21 +32,54 @@ The analysis follows a structured five-step workflow:
 
 ### Prerequisites
 - Python 3.8+
-- Jupyter Notebook
+- pip (Python package installer)
 
-### Installation
-1.  Clone the repository:
+### Quick Start
+To set up the project environment and run the analysis, follow these steps:
+
+1.  **Clone the repository**:
     ```bash
     git clone https://github.com/abelfx/Change-Point-Analysis-and-Statistical-Modeling-.git
-    ```
-2.  Navigate to the project directory:
-    ```bash
     cd Change-Point-Analysis-and-Statistical-Modeling-
     ```
-3.  Install dependencies (create a requirements.txt if needed):
+
+2.  **Create and activate a virtual environment** (recommended):
     ```bash
-    pip install pandas numpy matplotlib seaborn statsmodels pymc
+    # Linux/Mac
+    python3 -m venv venv
+    source venv/bin/activate
+    
+    # Windows
+    python -m venv venv
+    .\venv\Scripts\activate
     ```
+
+3.  **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Install the project package (editable mode)**:
+    This ensures imports like `from src import data_loader` work correctly in notebooks without path hacks.
+    ```bash
+    pip install -e .
+    ```
+
+5.  **Run the analysis**:
+    Launch Jupyter Lab or Notebook to view the analysis.
+    ```bash
+    jupyter lab notebooks/eda_analysis.ipynb
+    ```
+
+## Development & Testing
+To run the analysis scripts directly or perform tests:
+```bash
+# Run EDA script (if available)
+python src/eda_analysis.py
+
+# Run tests (placeholder)
+python -m unittest discover tests
+```
 
 ## Key Deliverables
 - **EDA Notebook**: Visualizations of price trends and volatility.
